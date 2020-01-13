@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+for source_file in *.png; do
+  common_name=$(basename $source_file '.png')
+  dest_file="${common_name}.jpg"
+  echo "converting $source_file to $dest_file"
+  convert $source_file $dest_file
+done
